@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>DeepResearch-MAS</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; color: #1a1a1a; }
+  h1 { font-size: 20px; }
+  #query { width: 100%; padding: 10px; font-size: 14px; box-sizing: border-box; }
+  #submit { margin-top: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+  #submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  #progress { margin-top: 24px; border-left: 2px solid #ddd; padding-left: 16px; }
+  .event { margin: 6px 0; font-size: 13px; }
+  .event .node { font-weight: 600; }
+  .event .meta { color: #666; margin-left: 8px; }
+  .event.start { color: #0066cc; }
+  .event.end { color: #0a8a3e; font-weight: 600; }
+  .event.error { color: #cc0000; font-weight: 600; }
+  .event.tool_call, .event.tool_result, .event.subtask_start, .event.subtask_done {
+    margin-left: 16px; color: #7a5c00; font-size: 12px;
+  }
+  #report {
+    margin-top: 24px; background: #fbfbfb; padding: 20px 24px; border-radius: 8px;
+    border: 1px solid #e5e5e5; font-size: 14px; line-height: 1.7;
+  }
+  #report h1, #report h2, #report h3 { margin-top: 1.2em; }
+  #report table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  #report th, #report td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; font-size: 13px; }
+  #report th { background: #f0f0f0; }
+  #report blockquote { border-left: 3px solid #ccc; margin: 12px 0; padding: 4px 12px; color: #555; background: #f7f7f7; }
+  #report code { background: #eee; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+  #report pre { background: #272822; color: #f8f8f2; padding: 12px; border-radius: 6px; overflow-x: auto; }
+  #report a { color: #0066cc; }
+</style>
+</head>
+<body>
+  <h1>DeepResearch-MAS 执行进度</h1>
+  <p>输入一个研究问题，实时查看Orchestrator/SubAgent/Critic/Writer的协同过程。</p>
+  <textarea id="query" rows="2" placeholder="例如：对比LangGraph和AutoGen在生产环境的成熟度"></textarea>
+  <br />
+  <button id="submit">开始研究</button>
+
+  <div id="progress"></div>
+  <div id="report" style="display:none"></div>
+
+<script>
+const submitBtn = document.getElementById('submit');
+const queryInput = document.getElementById('query');
+const progressDiv = document.getElementById('progress');
+const reportDiv = document.getElementById('report');
+
+const NODE_LABELS = {
+  orchestrator: 'Orchestrator（任务分解/复杂度判断）',
+  single_agent: 'BaselineAgent（单agent直答）',
+  parallel_research: 'SubAgent（并行调研）',
+  critic: 'Critic（矛盾检测/覆盖度判断）',
+  citation_manager: 'Citation Manager（来源校验/编号）',
+  writer: 'Writer（综合撰写报告）',
+};
+
+function escapeHtml(s) {
+  const div = document.createElement('div');
+  div.textContent = s === undefined || s === null ? '' : String(s);
+  return div.innerHTML;
+}
+
+function renderEvent(ev) {
+  const div = document.createElement('div');
+  div.className = 'event ' + (ev.type || '');
+  if (ev.type === 'start') {
+    div.innerHTML = `<span class="node">开始</span><span class="meta">query: ${escapeHtml(ev.query)}</span>`;
+  } else if (ev.type === 'node_done') {
+    const label = NODE_LABELS[ev.node] || ev.node;
+    const parts = [];
+    if (ev.routing_decision) parts.push(`routing=${ev.routing_decision}`);
+    if (ev.n_subtasks !== undefined) parts.push(`子任务数=${ev.n_subtasks}`);
+    if (ev.n_findings !== undefined) parts.push(`findings=${ev.n_findings}`);
+    if (ev.n_citations !== undefined) parts.push(`引用数=${ev.n_citations}`);
+    if (ev.iteration !== undefined) parts.push(`迭代=${ev.iteration}`);
+    if (ev.tokens_used !== undefined) parts.push(`累计tokens=${ev.tokens_used}`);
+    if (ev.subtask_errors) parts.push(`失败子任务=${escapeHtml(Object.keys(ev.subtask_errors).join(','))}`);
+    div.innerHTML = `<span class="node">${escapeHtml(label)}</span> 完成（${ev.elapsed_seconds}s）<span class="meta">${parts.join(' | ')}</span>`;
+  } else if (ev.type === 'tool_call') {
+    const who = ev.subtask_id ? `[${escapeHtml(ev.subtask_id)}]` : escapeHtml(ev.agent || '');
+    div.innerHTML = `🔍 ${who} 正在搜索：<span class="meta">"${escapeHtml(ev.query)}"</span>`;
+  } else if (ev.type === 'tool_result') {
+    const who = ev.subtask_id ? `[${escapeHtml(ev.subtask_id)}]` : escapeHtml(ev.agent || '');
+    const status = ev.error ? `失败（${escapeHtml(ev.error)}）` : `拿到${ev.n_results}条结果`;
+    div.innerHTML = `✓ ${who} 搜索完成：<span class="meta">${status}</span>`;
+  } else if (ev.type === 'subtask_start') {
+    div.innerHTML = `▶ 子任务 <b>${escapeHtml(ev.subtask_id)}</b> 开始：<span class="meta">${escapeHtml(ev.goal)}</span>`;
+  } else if (ev.type === 'subtask_done') {
+    div.innerHTML = `■ 子任务 <b>${escapeHtml(ev.subtask_id)}</b> 完成：<span class="meta">findings=${ev.n_findings}, sources=${ev.n_sources}</span>`;
+  } else if (ev.type === 'end') {
+    div.innerHTML = `<span class="node">完成</span><span class="meta">总耗时 ${ev.elapsed_seconds}s</span>`;
+  } else if (ev.type === 'error') {
+    div.innerHTML = `<span class="node">出错</span><span class="meta">${escapeHtml(ev.message)}</span>`;
+  }
+  progressDiv.appendChild(div);
+}
+
+submitBtn.addEventListener('click', async () => {
+  const query = queryInput.value.trim();
+  if (!query) return;
+
+  progressDiv.innerHTML = '';
+  reportDiv.style.display = 'none';
+  reportDiv.textContent = '';
+  submitBtn.disabled = true;
+
+  const resp = await fetch('/api/research', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query }),
+  });
+  const { task_id } = await resp.json();
+
+  const wsProtocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  const ws = new WebSocket(`${wsProtocol}://${location.host}/ws/${task_id}`);
+
+  ws.onmessage = (msg) => {
+    const ev = JSON.parse(msg.data);
+    renderEvent(ev);
+    if (ev.type === 'end') {
+      reportDiv.style.display = 'block';
+      // final_report_html 是服务端用 markdown 渲染 + bleach 清洗过的安全HTML
+      // （见 app/tools/report_render.py），不是原始未处理的LLM输出。
+      reportDiv.innerHTML = ev.final_report_html || '<p>（没有生成报告）</p>';
+      submitBtn.disabled = false;
+      ws.close();
+    } else if (ev.type === 'error') {
+      submitBtn.disabled = false;
+      ws.close();
+    }
+  };
+
+  ws.onerror = () => {
+    submitBtn.disabled = false;
+  };
+});
+</script>
+</body>
+</html>

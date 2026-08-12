@@ -1,0 +1,12 @@
+{
+  "routing_decision": "multi_agent",
+  "n_subtasks": 3,
+  "n_findings": 50,
+  "n_citations": 134,
+  "iteration": 2,
+  "subtask_errors": {
+    "learning-curve": "timeout after 90.0s"
+  },
+  "final_report_head": "（Writer未能生成有效报告）",
+  "final_report_len": 16
+}

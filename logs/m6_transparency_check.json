@@ -1,0 +1,48 @@
+{
+  "status": "done",
+  "event_types": [
+    "start",
+    "node_done",
+    "tool_call",
+    "tool_result",
+    "tool_call",
+    "tool_result",
+    "tool_call",
+    "tool_result",
+    "tool_call",
+    "tool_result",
+    "node_done",
+    "end"
+  ],
+  "tool_call_events": [
+    {
+      "type": "tool_call",
+      "agent": "m1_baseline_agent",
+      "tool": "web_search",
+      "query": "Anthropic Claude 最新发布模型 2025",
+      "elapsed_seconds": 5.86
+    },
+    {
+      "type": "tool_call",
+      "agent": "m1_baseline_agent",
+      "tool": "web_search",
+      "query": "Claude model lineup latest release",
+      "elapsed_seconds": 8.9
+    },
+    {
+      "type": "tool_call",
+      "agent": "m1_baseline_agent",
+      "tool": "web_search",
+      "query": "Claude Opus 5 Sonnet 5 Fable 5 release date Anthropic",
+      "elapsed_seconds": 29.64
+    },
+    {
+      "type": "tool_call",
+      "agent": "m1_baseline_agent",
+      "tool": "web_search",
+      "query": "Claude Opus 4.6 release February 2026",
+      "elapsed_seconds": 31.87
+    }
+  ],
+  "final_report_html_head": "<p>根据搜索结果，目前 Anthropic 最新发布的 Claude 系列模型已经进入第五代（Claude 5 系列）。以下按发布时间梳理最新模型：</p>\n<h2>最新一代：Claude 5 系列</h2>\n<table>\n<thead>\n<tr>\n<th>模型</th>\n<th>发布时间</th>\n<th>定位</th>\n<th>价格（输入/输出）</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Claude Fable 5</strong></td>\n<td>2026年6月9日</td>\n<td>旗舰前沿模型，面向最复杂、长周期的知识/编程任务，100万 token 上下文窗口</td>\n<td>$10 / $50 每百万 token</td>\n</tr>\n<tr>\n<td><strong>Claude Mythos 5</strong></td>\n<td>2026年6月9日</td>\n<td>与 Fable 5 同能力但\"移除安全分类器\"的版本，仅限 Project Glasswing 的受批准客户（有限可用）</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>Claude Sonnet 5</strong></td>\n<td>2026年6月</td>\n<td>中端主力模型，速度和成本更均衡</td>\n<td>$3 / $15 每百万 token</td>\n</tr>\n<tr>\n<td><strong>Claude Opus 5</strong></td>\n<td>2026年7月24日</td>\n<td>被官方称为\"迄今最安全的模型\"，接近 Fable 5 的前沿智能但价格仅一半；现为 Claude Max 默认模型、Claude Pro 最强模型</td>\n<td>$5 / $25 每百万 t"
+}

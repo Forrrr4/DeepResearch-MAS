@@ -1,0 +1,398 @@
+[
+  {
+    "id": "eval-001",
+    "category": "simple_factual",
+    "m1_error": false,
+    "m1_tokens": 946,
+    "m1_elapsed": 17.73,
+    "m1_scores": [
+      5,
+      5,
+      4,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 1183,
+    "full_elapsed": 19.93,
+    "full_scores": [
+      5,
+      5,
+      3,
+      5
+    ]
+  },
+  {
+    "id": "eval-002",
+    "category": "simple_factual",
+    "m1_error": false,
+    "m1_tokens": 1270,
+    "m1_elapsed": 23.75,
+    "m1_scores": [
+      4,
+      4,
+      2,
+      4
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 3821,
+    "full_elapsed": 36.63,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-003",
+    "category": "multi_hop_factual",
+    "m1_error": false,
+    "m1_tokens": 6708,
+    "m1_elapsed": 65.01,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 5202,
+    "full_elapsed": 37.82,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-004",
+    "category": "multi_hop_factual",
+    "m1_error": false,
+    "m1_tokens": 1755,
+    "m1_elapsed": 69.55,
+    "m1_scores": [
+      4,
+      3,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 3627,
+    "full_elapsed": 43.07,
+    "full_scores": [
+      4,
+      3,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-005",
+    "category": "multi_hop_factual",
+    "m1_error": false,
+    "m1_tokens": 4044,
+    "m1_elapsed": 34.96,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 1528,
+    "full_elapsed": 59.13,
+    "full_scores": [
+      4,
+      4,
+      1,
+      4
+    ]
+  },
+  {
+    "id": "eval-006",
+    "category": "multi_perspective_comparison",
+    "m1_error": false,
+    "m1_tokens": 6255,
+    "m1_elapsed": 46.06,
+    "m1_scores": [
+      5,
+      5,
+      4,
+      5
+    ],
+    "full_routing": "multi_agent",
+    "full_tokens": 35191,
+    "full_elapsed": 474.3,
+    "full_scores": [
+      5,
+      4,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-007",
+    "category": "multi_perspective_comparison",
+    "m1_error": true,
+    "m1_tokens": 0,
+    "m1_elapsed": 90.01,
+    "m1_scores": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "full_routing": "multi_agent",
+    "full_tokens": 45806,
+    "full_elapsed": 573.82,
+    "full_scores": [
+      3,
+      3,
+      4,
+      4
+    ]
+  },
+  {
+    "id": "eval-008",
+    "category": "multi_perspective_comparison",
+    "m1_error": true,
+    "m1_tokens": 0,
+    "m1_elapsed": 90.01,
+    "m1_scores": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 6459,
+    "full_elapsed": 64.6,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-009",
+    "category": "adversarial_contradiction",
+    "m1_error": false,
+    "m1_tokens": 9402,
+    "m1_elapsed": 59.52,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 7102,
+    "full_elapsed": 66.67,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-010",
+    "category": "adversarial_contradiction",
+    "m1_error": false,
+    "m1_tokens": 722,
+    "m1_elapsed": 15.05,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 911,
+    "full_elapsed": 21.46,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-011",
+    "category": "time_sensitive",
+    "m1_error": false,
+    "m1_tokens": 10599,
+    "m1_elapsed": 80.48,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 11099,
+    "full_elapsed": 72.19,
+    "full_scores": [
+      4,
+      4,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "eval-012",
+    "category": "time_sensitive",
+    "m1_error": false,
+    "m1_tokens": 9066,
+    "m1_elapsed": 60.77,
+    "m1_scores": [
+      5,
+      4,
+      4,
+      5
+    ],
+    "full_routing": "multi_agent",
+    "full_tokens": 58018,
+    "full_elapsed": 532.87,
+    "full_scores": [
+      4,
+      4,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-013",
+    "category": "adversarial_contradiction",
+    "m1_error": true,
+    "m1_tokens": 0,
+    "m1_elapsed": 90.01,
+    "m1_scores": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 7910,
+    "full_elapsed": 74.91,
+    "full_scores": [
+      5,
+      5,
+      5,
+      4
+    ]
+  },
+  {
+    "id": "eval-014",
+    "category": "adversarial_contradiction",
+    "m1_error": false,
+    "m1_tokens": 4785,
+    "m1_elapsed": 37.61,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 7031,
+    "full_elapsed": 112.6,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-015",
+    "category": "adversarial_contradiction",
+    "m1_error": false,
+    "m1_tokens": 860,
+    "m1_elapsed": 15.7,
+    "m1_scores": [
+      5,
+      5,
+      5,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 1040,
+    "full_elapsed": 28.87,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-016",
+    "category": "time_sensitive",
+    "m1_error": true,
+    "m1_tokens": 0,
+    "m1_elapsed": 90.01,
+    "m1_scores": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 19007,
+    "full_elapsed": 129.46,
+    "full_scores": [
+      4,
+      2,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "eval-017",
+    "category": "time_sensitive",
+    "m1_error": false,
+    "m1_tokens": 9316,
+    "m1_elapsed": 71.71,
+    "m1_scores": [
+      5,
+      4,
+      4,
+      5
+    ],
+    "full_routing": "single_agent",
+    "full_tokens": 9254,
+    "full_elapsed": 37.74,
+    "full_scores": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "eval-018",
+    "category": "multi_perspective_comparison",
+    "m1_error": true,
+    "m1_tokens": 0,
+    "m1_elapsed": 90.01,
+    "m1_scores": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "full_routing": "multi_agent",
+    "full_tokens": 26474,
+    "full_elapsed": 479.03,
+    "full_scores": [
+      2,
+      1,
+      4,
+      4
+    ]
+  }
+]

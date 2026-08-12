@@ -1,0 +1,10 @@
+{
+  "routing_decision": "multi_agent",
+  "n_subtasks": 3,
+  "n_findings": 39,
+  "n_citations": 87,
+  "iteration": 1,
+  "subtask_errors": {},
+  "final_report_head": "（Writer未能生成有效报告）",
+  "final_report_len": 16
+}

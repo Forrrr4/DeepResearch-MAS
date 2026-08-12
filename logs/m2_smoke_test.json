@@ -1,0 +1,26 @@
+[
+  {
+    "query": "什么是RAG（检索增强生成）？",
+    "routing_decision": "single_agent",
+    "n_subtasks": 0,
+    "subtask_goals": [],
+    "n_findings": 0,
+    "subtask_errors": {},
+    "report_head": "# 什么是 RAG（检索增强生成）？\n\n**RAG（Retrieval-Augmented Generation，检索增强生成）** 是一种将**信息检索**与**大语言模型（LLM）生成**相结合的技术框架。它的核心思想是：在模型生成回答之前，先从外部知识库中检索出与问题最相关的信息，再把这些信息作为\"参考资料\"喂给模型，让模型基于这些资料来生成答案。\n\n## 为什么需要 RAG？\n\n大语言模型存在几个固有局限，RAG 正是为了解决这些问题：\n\n1. **知识过时**：模型训练数据有截止时间，无法获知最新信息。\n2. **知识幻觉（Hallucination）**：模型可能一本正经地编造不存在的事实。\n3. **缺乏私有/专业知识**：模型不了解企业内部的文档、数据库或特定领域的专业资料。\n4. **不可溯源**：传统生成结果无法指出答案来自哪里。\n\n## RAG 的工作流程\n\n典型的 "
+  },
+  {
+    "query": "对比当前主流Agent编排框架（LangGraph、AutoGen、CrewAI）在生产环境落地的成熟度、调试便利性和学习曲线三个维度",
+    "routing_decision": "multi_agent",
+    "n_subtasks": 3,
+    "subtask_goals": [
+      "调研LangGraph在生产环境落地的成熟度、调试便利性和学习曲线三个维度的具体情况，包括核心架构、生态工具、状态管理与可视化调试手段、典型生产案例及上手难度。",
+      "调研AutoGen在生产环境落地的成熟度、调试便利性和学习曲线三个维度的具体情况，包括多智能体协作机制、对话编排、调试与可观测性手段、生产部署能力和上手难度。",
+      "调研CrewAI在生产环境落地的成熟度、调试便利性和学习曲线三个维度的具体情况，包括角色化任务编排、与外部工具集成、调试与日志手段、生产化能力及上手难度。"
+    ],
+    "n_findings": 0,
+    "subtask_errors": {
+      "autogen": "subagent ended without calling submit_findings"
+    },
+    "report_head": "# 关于「对比当前主流Agent编排框架（LangGraph、AutoGen、CrewAI）在生产环境落地的成熟度、调试便利性和学习曲线三个维度」的调研草稿（M2产出，未经Critic/Writer处理）\n\n## 未完成的子任务\n\n- autogen: 该角度信息不足（原因: subagent ended without calling submit_findings）"
+  }
+]

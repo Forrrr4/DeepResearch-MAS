@@ -1,0 +1,23 @@
+[
+  {
+    "i": 0,
+    "error": null,
+    "tool_calls": 6,
+    "n_findings": 20,
+    "tokens": 8861
+  },
+  {
+    "i": 1,
+    "error": null,
+    "tool_calls": 6,
+    "n_findings": 14,
+    "tokens": 7977
+  },
+  {
+    "i": 2,
+    "error": null,
+    "tool_calls": 6,
+    "n_findings": 16,
+    "tokens": 9977
+  }
+]

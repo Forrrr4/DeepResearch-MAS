@@ -1,0 +1,12 @@
+{
+  "n_questions": 12,
+  "n_routed_multi_agent": 9,
+  "n_routed_single_agent": 3,
+  "routing_accuracy_vs_expected": 0.583,
+  "n_with_expectation_label": 12,
+  "total_subtask_level_errors": 2,
+  "sum_elapsed_seconds_across_questions": 1055.2,
+  "avg_elapsed_seconds_per_question": 87.93,
+  "wall_clock_seconds_total_run": 553.2,
+  "concurrency": 2
+}

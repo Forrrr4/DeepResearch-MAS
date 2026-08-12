@@ -1,0 +1,5 @@
+eval-006 | routing= multi_agent | n_findings= 36 | n_citations= 83 | tokens= 35191 | elapsed= 474.3 | answer_len= 16309 | subtask_errors= {}
+eval-007 | routing= multi_agent | n_findings= 51 | n_citations= 118 | tokens= 45806 | elapsed= 573.82 | answer_len= 22627 | subtask_errors= {}
+eval-012 | routing= multi_agent | n_findings= 54 | n_citations= 128 | tokens= 58018 | elapsed= 532.87 | answer_len= 25635 | subtask_errors= {'google-adk': 'timeout after 90.0s'}
+eval-016 | routing= single_agent | n_findings= 0 | n_citations= 0 | tokens= 19007 | elapsed= 129.46 | answer_len= 1338 | subtask_errors= {}
+eval-018 | routing= multi_agent | n_findings= 27 | n_citations= 56 | tokens= 26474 | elapsed= 479.03 | answer_len= 10750 | subtask_errors= {'qdrant': 'timeout after 90.0s', 'pinecone': 'timeout after 90.0s', 'milvus': 'timeout after 90.0s', 'pinecone_retry': 'timeout after 90.0s'}

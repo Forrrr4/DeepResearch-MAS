@@ -1,0 +1,13 @@
+{
+  "n_questions": 18,
+  "n_routed_multi_agent": 5,
+  "n_routed_single_agent": 13,
+  "n_routed_converge": 0,
+  "routing_accuracy_vs_expected": 0.778,
+  "total_tokens": 229417,
+  "avg_tokens_per_question": 12745.4,
+  "avg_elapsed_seconds_per_question": 180.94,
+  "n_empty_reports": 2,
+  "wall_clock_seconds_total_run": 1652.3,
+  "concurrency": 2
+}

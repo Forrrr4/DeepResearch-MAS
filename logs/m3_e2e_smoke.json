@@ -1,0 +1,28 @@
+[
+  {
+    "query": "什么是RAG（检索增强生成）？",
+    "routing_decision": "single_agent",
+    "n_subtasks": 0,
+    "n_findings": 0,
+    "n_citations": 0,
+    "iteration": 0,
+    "subtask_errors": {},
+    "final_report_head": "# RAG（检索增强生成）是什么\n\n**RAG**（Retrieval-Augmented Generation，检索增强生成）是一种将**信息检索系统**与**大语言模型（LLM）生成能力**结合起来的技术框架。它的核心思想是：在模型生成答案之前，先从外部知识库中检索出相关内容，再把这些内容作为上下文提供给模型，让它\"带着资料\"来回答，而不是只依赖模型在训练阶段记住的参数化知识。\n\n## 核心流程\n\nRAG 通常分为三个阶段：\n\n1. **索引（Indexing）**\n   将文档、数据库、知识库等内容切分成小块（chunk），用嵌入模型（embedding model）把它们转换成向量，存入向量数据库（如 FAISS、Pinecone、Milvus 等）。\n\n2. **检索（Retrieval）**\n   用户提问时，把问题也转换成向量，在向量库中做相似度搜索，找出最相关的若干片段（top-k）。\n\n3. **生成（Generation）**\n   把检索到的片段和原始问题一起拼进提示词（prompt）中，交给 LLM 生成最终答案。模型据此\"参考材料\"作答，并能附带来源。\n\n##",
+    "final_report_len": 1403
+  },
+  {
+    "query": "对比当前主流Agent编排框架（LangGraph、AutoGen、CrewAI）在生产环境落地的成熟度、调试便利性和学习曲线三个维度",
+    "routing_decision": "multi_agent",
+    "n_subtasks": 2,
+    "n_findings": 23,
+    "n_citations": 60,
+    "iteration": 2,
+    "subtask_errors": {
+      "maturity": "timeout after 90.0s",
+      "debugging": "timeout after 90.0s",
+      "maturity-retry": "timeout after 90.0s"
+    },
+    "final_report_head": "",
+    "final_report_len": 0
+  }
+]

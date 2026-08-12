@@ -1,0 +1,8 @@
+{
+  "error": null,
+  "tokens_used": 7484,
+  "tool_calls_used": 6,
+  "elapsed": 72.72292749999997,
+  "findings": [],
+  "n_sources": 29
+}

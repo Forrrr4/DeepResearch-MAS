@@ -1,0 +1,7 @@
+{
+  "routing_decision": "converge",
+  "n_subtasks": 0,
+  "n_findings": 0,
+  "final_report": "# 对比LangGraph和AutoGen在生产环境的成熟度\n\n**报告说明：** 当前未提供任何可用调研发现（findings）及可用引用编号，因此本报告无法对LangGraph与AutoGen在生产环境的成熟度进行对比、归纳或形成结论。",
+  "iteration": 0
+}

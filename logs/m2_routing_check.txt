@@ -1,0 +1,12 @@
+OK eval-001: expected=False, actual=single_agent, n_findings=0
+OK eval-002: expected=False, actual=single_agent, n_findings=0
+OK eval-003: expected=False, actual=single_agent, n_findings=0
+OK eval-004: expected=False, actual=single_agent, n_findings=0
+OK eval-005: expected=False, actual=single_agent, n_findings=0
+OK eval-006: expected=True, actual=multi_agent, n_findings=44
+OK eval-007: expected=True, actual=multi_agent, n_findings=36
+WRONG eval-008: expected=True, actual=single_agent, n_findings=0
+WRONG eval-009: expected=True, actual=single_agent, n_findings=0
+OK eval-010: expected=False, actual=single_agent, n_findings=0
+OK eval-011: expected=False, actual=single_agent, n_findings=0
+WRONG eval-012: expected=False, actual=multi_agent, n_findings=51

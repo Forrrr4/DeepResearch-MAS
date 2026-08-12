@@ -1,0 +1,11 @@
+{
+  "n_questions": 18,
+  "n_errors": 5,
+  "n_used_search": 9,
+  "total_tokens": 65728,
+  "avg_tokens_per_question": 3651.6,
+  "sum_elapsed_seconds_across_questions": 1048.0,
+  "avg_elapsed_seconds_per_question": 58.22,
+  "wall_clock_seconds_total_run": 358.5,
+  "concurrency": 3
+}

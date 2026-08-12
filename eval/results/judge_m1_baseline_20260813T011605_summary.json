@@ -1,0 +1,9 @@
+{
+  "n_scored": 18,
+  "n_missing_score": 0,
+  "avg_accuracy": 3.5,
+  "avg_completeness": 3.33,
+  "avg_citation_validity": 3.22,
+  "avg_honesty": 3.56,
+  "avg_honesty_on_adversarial": 4.17
+}

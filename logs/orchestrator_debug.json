@@ -1,0 +1,7 @@
+{
+  "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Thinking mode does not support this tool_choice', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}",
+  "tokens_used": 0,
+  "routing_decision": null,
+  "subtasks": [],
+  "fallback_reason": null
+}
