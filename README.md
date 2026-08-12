@@ -113,9 +113,3 @@ pytest tests/integration -q   # 5个对抗测试，真实调用API，验证幻�
 - Qdrant 已预置容器但应用代码尚未接入，长期记忆/历史复用能力未实现
 - 任务状态存进程内存，不支持多进程部署，服务重启会丢失进行中的任务
 
-## 文档索引
-
-- [`docs/01_架构设计方案.md`](docs/01_架构设计方案.md) —— 完整架构设计与权衡讨论
-- [`docs/design_decisions_log.md`](docs/design_decisions_log.md) —— **最重要**，按 milestone 记录每一步真实测试数据、设计决策、发现并修复的真实 bug
-- [`docs/06_Demo演示脚本.md`](docs/06_Demo演示脚本.md) —— 演示用的问题示例
-- [`PROGRESS.md`](PROGRESS.md) —— milestone 完成情况总览
